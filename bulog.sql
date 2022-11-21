@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Waktu pembuatan: 01 Nov 2022 pada 05.42
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 7.4.29
+-- Host: 127.0.0.1
+-- Generation Time: Nov 21, 2022 at 07:27 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang_keluar`
+-- Table structure for table `barang_keluar`
 --
 
 CREATE TABLE `barang_keluar` (
@@ -36,7 +36,7 @@ CREATE TABLE `barang_keluar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `barang_keluar`
+-- Dumping data for table `barang_keluar`
 --
 
 INSERT INTO `barang_keluar` (`id`, `id_barang`, `id_penerima`, `jumlah`, `harga`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `barang_keluar` (`id`, `id_barang`, `id_penerima`, `jumlah`, `harga`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang_masuk`
+-- Table structure for table `barang_masuk`
 --
 
 CREATE TABLE `barang_masuk` (
@@ -58,7 +58,7 @@ CREATE TABLE `barang_masuk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `barang_masuk`
+-- Dumping data for table `barang_masuk`
 --
 
 INSERT INTO `barang_masuk` (`id`, `id_suplayer`, `nama_barang`, `jenis_barang`, `stok_barang`, `harga`) VALUES
@@ -67,8 +67,8 @@ INSERT INTO `barang_masuk` (`id`, `id_suplayer`, `nama_barang`, `jenis_barang`, 
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `barang_masuk_barang_keluar`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `barang_masuk_barang_keluar`
+-- (See below for the actual view)
 --
 CREATE TABLE `barang_masuk_barang_keluar` (
 `id` int(11)
@@ -81,8 +81,8 @@ CREATE TABLE `barang_masuk_barang_keluar` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `detail_barang_keluar`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `detail_barang_keluar`
+-- (See below for the actual view)
 --
 CREATE TABLE `detail_barang_keluar` (
 `id` int(11)
@@ -95,8 +95,8 @@ CREATE TABLE `detail_barang_keluar` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `detail_barang_masuk`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `detail_barang_masuk`
+-- (See below for the actual view)
 --
 CREATE TABLE `detail_barang_masuk` (
 `id` int(11)
@@ -110,7 +110,7 @@ CREATE TABLE `detail_barang_masuk` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login`
+-- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
@@ -120,7 +120,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `login`
+-- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id`, `username`, `password`) VALUES
@@ -129,7 +129,7 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penerima`
+-- Table structure for table `penerima`
 --
 
 CREATE TABLE `penerima` (
@@ -139,7 +139,7 @@ CREATE TABLE `penerima` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `penerima`
+-- Dumping data for table `penerima`
 --
 
 INSERT INTO `penerima` (`id`, `nama_penerima`, `alamat_penerima`) VALUES
@@ -148,7 +148,7 @@ INSERT INTO `penerima` (`id`, `nama_penerima`, `alamat_penerima`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `suplayer`
+-- Table structure for table `suplayer`
 --
 
 CREATE TABLE `suplayer` (
@@ -158,7 +158,7 @@ CREATE TABLE `suplayer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `suplayer`
+-- Dumping data for table `suplayer`
 --
 
 INSERT INTO `suplayer` (`id_suplayer`, `nama_suplayer`, `alamat_suplayer`) VALUES
@@ -167,7 +167,7 @@ INSERT INTO `suplayer` (`id_suplayer`, `nama_suplayer`, `alamat_suplayer`) VALUE
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `barang_masuk_barang_keluar`
+-- Structure for view `barang_masuk_barang_keluar`
 --
 DROP TABLE IF EXISTS `barang_masuk_barang_keluar`;
 
@@ -176,7 +176,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `detail_barang_keluar`
+-- Structure for view `detail_barang_keluar`
 --
 DROP TABLE IF EXISTS `detail_barang_keluar`;
 
@@ -185,7 +185,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `detail_barang_masuk`
+-- Structure for view `detail_barang_masuk`
 --
 DROP TABLE IF EXISTS `detail_barang_masuk`;
 
@@ -196,7 +196,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
--- Indeks untuk tabel `barang_keluar`
+-- Indexes for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
   ADD PRIMARY KEY (`id`),
@@ -204,69 +204,69 @@ ALTER TABLE `barang_keluar`
   ADD KEY `id_penerima` (`id_penerima`);
 
 --
--- Indeks untuk tabel `barang_masuk`
+-- Indexes for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `login`
+-- Indexes for table `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `penerima`
+-- Indexes for table `penerima`
 --
 ALTER TABLE `penerima`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `suplayer`
+-- Indexes for table `suplayer`
 --
 ALTER TABLE `suplayer`
   ADD PRIMARY KEY (`id_suplayer`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `barang_keluar`
+-- AUTO_INCREMENT for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `barang_masuk`
+-- AUTO_INCREMENT for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `login`
+-- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `penerima`
+-- AUTO_INCREMENT for table `penerima`
 --
 ALTER TABLE `penerima`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `suplayer`
+-- AUTO_INCREMENT for table `suplayer`
 --
 ALTER TABLE `suplayer`
   MODIFY `id_suplayer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `barang_keluar`
+-- Constraints for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
   ADD CONSTRAINT `barang_keluar_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang_masuk` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
