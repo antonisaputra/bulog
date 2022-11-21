@@ -63,4 +63,10 @@ class Barang_masuk extends CI_Controller{
         $this->db->delete('barang_masuk');
         redirect('Barang_masuk');
     }
+
+    public function print(){
+        $data['title'] = "Data Barang Masuk";
+        $data['barang_masuk'] = $this->Barang_masuk_model->get();
+        $this->load->view('print_barang_masuk', $data);
+    }
 }
